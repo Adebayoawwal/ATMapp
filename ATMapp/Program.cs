@@ -1,11 +1,11 @@
-﻿public class cardHolder
+﻿public class Program
 {
     String cardnum;
     int pin;
     String FirstName;
     String LastName;
     double balance;
-    public cardHolder(String cardnum, int pin, String FirstName, String lastName, double balance)
+    public Program(String cardnum, int pin, String FirstName, String lastName, double balance)
     {
         this.cardnum = cardnum;
         this.pin = pin;
@@ -54,7 +54,7 @@
     {
         balance = newBalance;
     }
-    public static void main(String[] args)
+    public static void Main(String[] args)
     {
         void printOptions()
         {
@@ -65,14 +65,14 @@
             Console.WriteLine("4. Exit");
         }
 
-        void deposit(cardHolder currentUser)
+        void deposit(Program currentUser)
         {
             Console.WriteLine("How much $$ would like to deposit:");
             double deposit = Double.Parse(Console.ReadLine());
             currentUser.setbalance(deposit);
             Console.WriteLine("Thank you for your $$. Your new balance is:" + currentUser.getBalance());
         }
-        void withdraw(cardHolder currentUser)
+        void withdraw(Program currentUser)
         {
             Console.WriteLine("How much $$ would like to withdraw:");
             double withdraw = Double.Parse(Console.ReadLine());
@@ -87,21 +87,21 @@
             }
 
         }
-        void balance(cardHolder currentUser)
+        void balance(Program currentUser)
         {
             Console.WriteLine("Current balance :" + currentUser.getBalance());
         }
-        List<cardHolder> cardHolder = new List<cardHolder>();
-        cardHolder.Add(new cardHolder("346656878687898989756", 1234, "john", "khadjat", 150.1));
-        cardHolder.Add(new cardHolder("346656878687898989756", 1234, "aishat", "ade", 1230.31));
-        cardHolder.Add(new cardHolder("346656878687898989756", 1234, "Frida", "adebayo", 140.31));
-        cardHolder.Add(new cardHolder("346656878687898989756", 1234, "Muneeb", "salaudeen", 130.31));
-        cardHolder.Add(new cardHolder("346656878687898989756", 1234, "Dawn", "bayo", 1340.31));
+        List<Program> cardHolder = new List<Program>();
+        cardHolder.Add(new Program("346656878687898989756", 1234, "john", "khadjat", 150.1));
+        cardHolder.Add(new Program("346656878687898989756", 1234, "aishat", "ade", 1230.31));
+        cardHolder.Add(new Program("346656878687898989756", 1234, "Frida", "adebayo", 140.31));
+        cardHolder.Add(new Program("346656878687898989756", 1234, "Muneeb", "salaudeen", 130.31));
+        cardHolder.Add(new Program("346656878687898989756", 1234, "Dawn", "bayo", 1340.31));
 
         Console.WriteLine("Welcome to SimpleATM");
         Console.WriteLine("Please insert your debit card:");
         String debitCardNum = "";
-        cardHolder currentUser;
+        Program currentUser;
 
         while (true)
         {
@@ -127,7 +127,7 @@
             catch { Console.WriteLine("Incorrect pin.Please try again."); }
         }
 
-        Console.WriteLine("Welcome" + currentUser.getFirstName() + " :)");
+        Console.WriteLine("Welcome" + currentUser.getFirstName() + " :");
         int option = 0;
         do
         {
@@ -154,6 +154,7 @@
             else { option = 0; }
         }
         while (option != 4);
-        Console.WriteLine("Thank you! have a nice day :)");
-    }   
+        Console.WriteLine("Thank you! have a nice day :");
+    }  
+
 }
